@@ -40,18 +40,19 @@ public class board extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         g.setColor(bg);
-        g.fillRect(0,0,game.WIDTH,game.HEIGHT);
+        g.fillRect(0,0,game.WIDTH,game.HEIGHT); //background
         player.update(g);
         g.setColor(Color.RED);
         for(Rectangle r : rects) {
             Graphics2D g2d = (Graphics2D) g;
-            g2d.setColor(Color.GREEN);
-            //g2d.fillRect(r.x, r.y, r.width, r.height);
+            g2d.fillRect(r.x, r.y, r.width, r.height);
             AffineTransform old = g2d.getTransform();
-            g2d.translate(r.x+PIPE_W/2, r.y+PIPE_H/2);
+            g2d.translate(r.x+PIPE_W/2, r.y+PIPE_H/2); //scroll direction
             //g2d.translate(r.width, 0);
             g2d.rotate(Math.PI/2);
-            g2d.drawImage(pipeLength, -PIPE_W/2, PIPE_H/2, null);
+            //g2d.drawImage(pipeLength,-r.width/2, r.height/2, board.PIPE_H,r.width , null);
+            //g2d.drawImage(pipeLength, -PIPE_W/2, PIPE_H/2, board.PIPE_W, r.height, null);
+
             g2d.setTransform(old);
         }
         g.setFont(scoreFont);

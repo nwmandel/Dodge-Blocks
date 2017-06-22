@@ -51,17 +51,16 @@ public class game implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         panel.repaint();
         if(!paused) {
-            //player.physics();
             if(scroll % 90 == 0) {
                 /*Rectangle r = new Rectangle(WIDTH, (int) (Math.random()*HEIGHT/3f), GamePanel.PIPE_W, (int) ((Math.random()*HEIGHT)/5f + (0.3f)*HEIGHT));
                 int h2 = (int) ((Math.random()*HEIGHT)/5f + (0.2f)*HEIGHT);
                 Rectangle r2 = new Rectangle(WIDTH, HEIGHT - h2, GamePanel.PIPE_W, h2);*/
-                int h1 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
-                Rectangle r = new Rectangle((int) (Math.random()*WIDTH/3f), 50, h1, board.PIPE_H);
-                int h2 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
-                Rectangle r2 = new Rectangle((int) (WIDTH-Math.random()*WIDTH/3f), 50,  h2, board.PIPE_H);
-                int h3 = (int) ((Math.random()*WIDTH)/6f + (0.1f)*WIDTH);
-                Rectangle r3 = new Rectangle((int) (Math.random()*WIDTH/2), 50,  h3, board.PIPE_H);
+                int w1 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
+                Rectangle r = new Rectangle((int) (Math.random()*WIDTH/3f), 50, w1, board.PIPE_H);
+                int w2 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
+                Rectangle r2 = new Rectangle((int) (WIDTH-Math.random()*WIDTH/3f), 50,  w2, board.PIPE_H);
+                int w3 = (int) ((Math.random()*WIDTH)/6f + (0.1f)*WIDTH);
+                Rectangle r3 = new Rectangle((int) (Math.random()*WIDTH/2), 50,  w3, board.PIPE_H);
                 rects.add(r);
                 rects.add(r2);
                 rects.add(r3);
@@ -123,9 +122,7 @@ public class game implements ActionListener, KeyListener {
                 paused = false;
             }
         }else if (!paused) {
-            if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-                player.jump();
-            } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+            if (e.getKeyCode() == KeyEvent.VK_UP) {
                 player.mov_up();
             } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                 player.mov_down();
