@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -48,7 +49,6 @@ public class board extends JPanel {
             g2d.fillRect(r.x, r.y, r.width, r.height);
             AffineTransform old = g2d.getTransform();
             g2d.translate(r.x+PIPE_W/2, r.y+PIPE_H/2); //scroll direction
-            //g2d.translate(r.width, 0);
             g2d.rotate(Math.PI/2);
             //g2d.drawImage(pipeLength,-r.width/2, r.height/2, board.PIPE_H,r.width , null);
             //g2d.drawImage(pipeLength, -PIPE_W/2, PIPE_H/2, board.PIPE_W, r.height, null);

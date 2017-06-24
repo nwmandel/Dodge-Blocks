@@ -1,3 +1,4 @@
+
 import java.awt.Image;
 import java.awt.*;
 import java.awt.Rectangle;
@@ -46,21 +47,23 @@ public class game implements ActionListener, KeyListener {
         new game().begin();
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         panel.repaint();
+        int speed = 90;
         if(!paused) {
-            if(scroll % 90 == 0) {
-                /*Rectangle r = new Rectangle(WIDTH, (int) (Math.random()*HEIGHT/3f), GamePanel.PIPE_W, (int) ((Math.random()*HEIGHT)/5f + (0.3f)*HEIGHT));
-                int h2 = (int) ((Math.random()*HEIGHT)/5f + (0.2f)*HEIGHT);
-                Rectangle r2 = new Rectangle(WIDTH, HEIGHT - h2, GamePanel.PIPE_W, h2);*/
+            if(scroll % speed == 0) {
                 int w1 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
-                Rectangle r = new Rectangle((int) (Math.random()*WIDTH/3f), 50, w1, board.PIPE_H);
+                Rectangle r = new Rectangle((int) (Math.random()*WIDTH/2-100),
+                        (int) (Math.random()*100+40), w1, board.PIPE_H);
+
                 int w2 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
-                Rectangle r2 = new Rectangle((int) (WIDTH-Math.random()*WIDTH/3f), 50,  w2, board.PIPE_H);
-                int w3 = (int) ((Math.random()*WIDTH)/6f + (0.1f)*WIDTH);
-                Rectangle r3 = new Rectangle((int) (Math.random()*WIDTH/2), 50,  w3, board.PIPE_H);
+                Rectangle r2 = new Rectangle((int) (WIDTH-Math.random()*WIDTH/2),
+                        (int) (Math.random()*100+40),  w2, board.PIPE_H);
+
+                int w3 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
+                Rectangle r3 = new Rectangle((int) (Math.random()*WIDTH/2+100),
+                        (int) (Math.random()*100+40),  w3, board.PIPE_H);
                 rects.add(r);
                 rects.add(r2);
                 rects.add(r3);
@@ -91,6 +94,10 @@ public class game implements ActionListener, KeyListener {
             rects.removeAll(toRemove);
             time++;
             scroll++;
+            if (time/8 % 30 == 0) {
+                if (speed == 0) speed = 0;
+                --speed;
+            }
 
             if (player.y > HEIGHT || player.y + player.RAD < 0) {
                 game = false;
@@ -117,7 +124,7 @@ public class game implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         if (paused) {
             player.x = WIDTH/2;
-            player.y = HEIGHT/2;
+            player.y = 500;
             if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                 paused = false;
             }
