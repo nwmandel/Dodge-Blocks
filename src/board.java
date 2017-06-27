@@ -22,7 +22,7 @@ public class board extends JPanel {
     private Font scoreFont, pauseFont;
     public static final Color bg = new Color(202, 74, 0);
     public static final int PIPE_W = 50, PIPE_H = 30;
-    public Image pipeLength;
+    public Image blockSize;
 
     public board(game gm, player player, ArrayList<Rectangle> rects) {
         this.gm = gm;
@@ -32,7 +32,7 @@ public class board extends JPanel {
         pauseFont = new Font("Arial", Font.BOLD, 48);
 
         try {
-            pipeLength = ImageIO.read(new File("block.png"));
+            blockSize = ImageIO.read(new File("block.png"));
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -50,8 +50,8 @@ public class board extends JPanel {
             AffineTransform old = g2d.getTransform();
             g2d.translate(r.x+PIPE_W/2, r.y+PIPE_H/2); //scroll direction
             g2d.rotate(Math.PI/2);
-            //g2d.drawImage(pipeLength,-r.width/2, r.height/2, board.PIPE_H,r.width , null);
-            //g2d.drawImage(pipeLength, -PIPE_W/2, PIPE_H/2, board.PIPE_W, r.height, null);
+            //g2d.drawImage(blockSize,-r.width/2, r.height/2, board.PIPE_H,r.width , null);
+            //g2d.drawImage(blockSize, -PIPE_W/2, PIPE_H/2, board.PIPE_W, r.height, null);
 
             g2d.setTransform(old);
         }
