@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
 /**
  * Created by Nick on 6/22/2017.
  */
+
 public class board extends JPanel {
 
     private player player;
@@ -68,3 +70,4 @@ public class board extends JPanel {
         }
     }
 }
+
