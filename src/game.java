@@ -67,16 +67,7 @@ public class game implements ActionListener, KeyListener {
                 rects.add(r);
                 rects.add(r2);
                 rects.add(r3);
-                /*
-                int h1 = (int) ((Math.random()*HEIGHT)/5f + (0.2f)*HEIGHT);
-                Rectangle r = new Rectangle(WIDTH, (int) (Math.random()*HEIGHT/3f), board.PIPE_W, h1);
-                int h2 = (int) ((Math.random()*HEIGHT)/5f + (0.2f)*HEIGHT);
-                Rectangle r2 = new Rectangle(WIDTH, (int) (HEIGHT-Math.random()*HEIGHT/3f), board.PIPE_W, h2);
-                int h3 = (int) ((Math.random()*HEIGHT)/6f + (0.1f)*HEIGHT);
-                Rectangle r3 = new Rectangle(WIDTH, (int) (Math.random()*HEIGHT/2*0.9+1), board.PIPE_W, h1);
-                rects.add(r);
-                rects.add(r2);
-                rects.add(r3);*/
+
             }
             boolean game = true;
             ArrayList<Rectangle> toRemove = new ArrayList<Rectangle>();
