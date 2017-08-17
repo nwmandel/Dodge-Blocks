@@ -55,15 +55,15 @@ public class game implements ActionListener, KeyListener {
             if(scroll % speed == 0) {
                 int w1 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
                 Rectangle r = new Rectangle((int) (Math.random()*WIDTH/2-100),
-                        (int) (Math.random()*100+40), w1, board.PIPE_H);
+                        (int) (Math.random()*10 + 45), w1, board.PIPE_H);
 
                 int w2 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
                 Rectangle r2 = new Rectangle((int) (WIDTH-Math.random()*WIDTH/2),
-                        (int) (Math.random()*100+40),  w2, board.PIPE_H);
+                        (int) (Math.random()*10 + 45),  w2, board.PIPE_H);
 
                 int w3 = (int) ((Math.random()*WIDTH)/5f + (0.2f)*WIDTH);
                 Rectangle r3 = new Rectangle((int) (Math.random()*WIDTH/2+100),
-                        (int) (Math.random()*100+40),  w3, board.PIPE_H);
+                        (int) (Math.random()*10 + 45),  w3, board.PIPE_H);
                 rects.add(r);
                 rects.add(r2);
                 rects.add(r3);
